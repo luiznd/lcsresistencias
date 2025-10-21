@@ -31,7 +31,7 @@ const ImageGallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
           {images.map((url) => (
             <div 
               key={url}
@@ -42,7 +42,7 @@ const ImageGallery = () => {
                 <img
                   src={url}
                   alt={toTitle(url)}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-40 md:h-64 object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />

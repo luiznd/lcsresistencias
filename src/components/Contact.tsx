@@ -96,16 +96,16 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4">
         {/* Cabeçalho */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Fale Conosco</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Fale Conosco</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Preencha o formulário com seus dados e descreva sua necessidade. Nossa equipe retornará rapidamente.
           </p>
         </div>
 
         {/* Grid principal */}
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10">
           {/* Formulário */}
-          <div className="bg-gray-50 rounded-2xl p-8 shadow-sm border border-gray-200">
+          <div className="bg-gray-50 rounded-2xl p-6 md:p-8 shadow-sm border border-gray-200">
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">Formulário de Contato</h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -242,7 +242,7 @@ const Contact: React.FC = () => {
       <div className="container mx-auto px-4 mt-12">
         <h3 className="text-2xl font-semibold text-gray-900 mb-4">Localização</h3>
         <p className="text-gray-700 mb-4">{CONTACT.fullAddress}</p>
-        <div className="relative w-full h-[420px] rounded-2xl overflow-hidden border border-gray-200">
+        <div className="relative w-full h-[320px] md:h-[420px] rounded-2xl overflow-hidden border border-gray-200">
           <iframe
             title={`Mapa - ${CONTACT.fullAddress}`}
             src={LINKS.mapsEmbed}

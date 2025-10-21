@@ -14,17 +14,17 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 text-center text-white">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-4xl md:text-7xl font-bold mb-6 leading-tight">
             Soluções em 
             <span className="block text-accent-500">Aquecimento Elétrico Industrial</span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto">
+            <p className="text-lg md:text-2xl mb-6 md:mb-8 text-gray-200 max-w-3xl mx-auto">
             Especialistas em equipamentos de aquecimento elétrico para indústria, 
             oferecendo soluções personalizadas e de alta qualidade.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
             <a href="#gallery" className="btn-primary text-lg inline-flex items-center gap-2">
               Conheça Nossos Produtos
             </a>
