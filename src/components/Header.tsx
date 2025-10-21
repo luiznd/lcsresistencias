@@ -18,8 +18,16 @@ const Header = () => {
     <header className="bg-slate-900 text-slate-100 shadow-sm border-b border-slate-800 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-3 items-center h-14 md:h-16 md:flex md:items-center md:justify-between">
+          {/* Right aligned mobile menu button */}
+          {/* Mobile brand (visible only on mobile) */}
+          <div className="col-start-1 col-span-2 md:hidden">
+            <div className="flex flex-col leading-tight">
+              <span className="text-sm font-bold text-slate-100">LCS Resistências</span>
+              <span className="text-[11px] text-slate-400">Aquecimento Elétrico Industrial</span>
+            </div>
+          </div>
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="hidden md:flex items-center">
             <div className="flex-shrink-0">
               <div className="flex items-center">
                 <img src="/images/logo-lcs.svg" alt="LCS Resistências" className="h-10 w-auto" />
@@ -32,7 +40,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:flex items-center space-x-6 text-sm" aria-label="Navegação principal">
             <div className="ml-10 flex items-baseline space-x-8">
               {navigation.map((item) => (
                 <a
@@ -47,18 +55,19 @@ const Header = () => {
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="col-start-3 col-span-1 justify-self-end flex justify-end md:hidden">
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              type="button"
+              className="inline-flex items-center justify-center p-3 rounded-md text-slate-100 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-400"
               aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
-              className="inline-flex items-center justify-center p-3 rounded-md text-slate-300 hover:text-accent-500 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent-500 focus:ring-offset-2 focus:ring-offset-slate-900"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (
-                <XMarkIcon className="block h-7 w-7" />
+                <XMarkIcon className="h-7 w-7" aria-hidden="true" />
               ) : (
-                <Bars3Icon className="block h-7 w-7" />
+                <Bars3Icon className="h-7 w-7" aria-hidden="true" />
               )}
             </button>
           </div>
