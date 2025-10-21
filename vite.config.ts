@@ -43,7 +43,13 @@ export default defineConfig({
   plugins: [react(), galleryPlugin()],
   server: {
     port: 3000,
-    open: true
+    open: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8787',
+        changeOrigin: true,
+      },
+    },
   },
   build: {
     outDir: 'dist',

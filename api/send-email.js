@@ -38,6 +38,9 @@ export default async function handler(req, res) {
     const user = process.env.SMTP_USER
     const pass = process.env.SMTP_PASS
     const to = process.env.MAIL_TO || 'lcs.contato@gmail.com'
+    const secureEnv = process.env.SMTP_SECURE
+    const secure = secureEnv ? /^(true|1|yes)$/i.test(secureEnv) : (port === 465)
+    const fromAddress = process.env.SMTP_FROM || user
 
     if (!user || !pass) {
       return res.status(500).json({ error: 'SMTP credentials not configured' })
@@ -46,7 +49,7 @@ export default async function handler(req, res) {
     const transporter = nodemailer.createTransport({
       host,
       port,
-      secure: port === 465, // true for 465, false for others
+      secure, // true for 465, false for others or based on SMTP_SECURE
       auth: { user, pass },
     })
 
@@ -64,7 +67,7 @@ export default async function handler(req, res) {
     `
 
     const info = await transporter.sendMail({
-      from: `Site LCS <${user}>`,
+      from: `LCS Resistências <${fromAddress}>`,
       to,
       replyTo: email,
       subject,

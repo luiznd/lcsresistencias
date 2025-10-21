@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react'
 
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
 import { CONTACT, LINKS } from '../config/contact'
+import { CheckCircleIcon, ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 // Ícone do WhatsApp (SVG inline, sem dependências externas)
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -18,6 +19,14 @@ const Contact: React.FC = () => {
     phone: '',
     description: ''
   })
+
+  const [modal, setModal] = useState({
+    open: false,
+    title: '',
+    message: '',
+    type: 'success' as 'success' | 'error'
+  })
+  const closeModal = () => setModal(prev => ({ ...prev, open: false }))
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -39,7 +48,12 @@ const Contact: React.FC = () => {
     }
 
     if (errors.length > 0) {
-      alert('Por favor, corrija os seguintes pontos:\n\n- ' + errors.join('\n- '))
+      setModal({
+        open: true,
+        title: 'Verifique os campos',
+        message: 'Por favor, corrija os seguintes pontos:\n\n- ' + errors.join('\n- '),
+        type: 'error'
+      })
       return
     }
 
@@ -52,12 +66,28 @@ const Contact: React.FC = () => {
       const data = await res.json()
       if (!res.ok) {
         const details = Array.isArray(data?.details) ? `\n\n- ${data.details.join('\n- ')}` : ''
-        throw new Error(data?.error || `Falha ao enviar e-mail.${details}`)
+        setModal({
+          open: true,
+          title: 'Falha ao enviar',
+          message: (data?.error || 'Falha ao enviar e-mail.') + details,
+          type: 'error'
+        })
+        return
       }
-      alert('Mensagem enviada com sucesso!')
+      setModal({
+        open: true,
+        title: 'Mensagem enviada!',
+        message: 'Recebemos sua mensagem. Em breve entraremos em contato.',
+        type: 'success'
+      })
       setFormData({ name: '', email: '', phone: '', description: '' })
     } catch (err: any) {
-      alert(err.message || 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.')
+      setModal({
+        open: true,
+        title: 'Erro no envio',
+        message: err.message || 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.',
+        type: 'error'
+      })
     }
   }
 
@@ -236,6 +266,60 @@ const Contact: React.FC = () => {
       >
         <WhatsAppIcon className="h-8 w-8" />
       </a>
+
+      {modal.open && (
+        <div className="fixed inset-0 z-[100]">
+          <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={closeModal}></div>
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-gray-200">
+              <div className="p-6">
+                <div className="flex items-start">
+                  {modal.type === 'success' ? (
+                    <div className="flex-shrink-0 mr-3">
+                      <CheckCircleIcon className="h-6 w-6 text-green-600" />
+                    </div>
+                  ) : (
+                    <div className="flex-shrink-0 mr-3">
+                      <ExclamationTriangleIcon className="h-6 w-6 text-red-600" />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <h4 className="text-lg font-semibold text-gray-900">{modal.title}</h4>
+                    <p className="mt-2 whitespace-pre-line text-gray-700">{modal.message}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={closeModal}
+                    className="ml-3 p-2 rounded-lg text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none"
+                    aria-label="Fechar"
+                  >
+                    <XMarkIcon className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="mt-6 flex justify-end gap-3">
+                  {modal.type === 'success' && (
+                    <a
+                      href={LINKS.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold"
+                    >
+                      WhatsApp
+                    </a>
+                  )}
+                  <button
+                    type="button"
+                    onClick={closeModal}
+                    className="inline-flex items-center bg-gray-100 hover:bg-gray-200 text-gray-800 px-4 py-2 rounded-lg font-semibold"
+                  >
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
