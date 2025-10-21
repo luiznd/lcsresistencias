@@ -1,41 +1,26 @@
 import { WrenchScrewdriverIcon, CogIcon, ClipboardDocumentCheckIcon } from '@heroicons/react/24/outline'
 
-const ServiceSVG: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Representação de serviço">
-    <defs>
-      <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#f3f4f6"/>
-        <stop offset="100%" stopColor="#e5e7eb"/>
-      </linearGradient>
-    </defs>
-    <rect x="0" y="0" width="640" height="240" fill="url(#bg)" />
-    <g stroke="#9ca3af" strokeWidth="6" fill="#f59e0b22">
-      <rect x="40" y="60" width="160" height="120" rx="12" />
-      <rect x="240" y="40" width="160" height="160" rx="16" />
-      <circle cx="480" cy="120" r="56" />
-      {Array.from({ length: 12 }).map((_, i) => (
-        <rect key={`tooth-${i}`} x="-6" y="-86" width="12" height="22" transform={`translate(480,120) rotate(${i*30})`} />
-      ))}
-    </g>
-  </svg>
-)
 
 const Services = () => {
   const services = [
     {
       icon: WrenchScrewdriverIcon,
-      title: "Resistores e Fornos",
-      description: "Resistores elétricos industriais de alta qualidade para fornos e equipamentos de aquecimento.",
+      title: "Resistências e Fornos",
+      description: "Resistências elétricas industriais de alta qualidade para fornos e equipamentos de aquecimento.",
+      features: ["Resistências tubulares", "Fornos industriais", "Elementos aquecedores"],
+      imageSrc: "/images/Gemini_Generated_Image_cm067pcm067pcm06.png"
     },
     {
       icon: CogIcon,
       title: "Manutenção",
       description: "Serviços especializados de manutenção preventiva e corretiva em equipamentos elétricos industriais.",
+      imageSrc: "/images/Gemini_Generated_Image_pq632ppq632ppq63.png"
     },
     {
       icon: ClipboardDocumentCheckIcon,
       title: "Projetos",
       description: "Desenvolvimento de projetos customizados para soluções de aquecimento elétrico industrial.",
+      imageSrc: "/images/Gemini_Generated_Image_62z15662z15662z1.png"
     }
   ]
 
@@ -44,10 +29,13 @@ const Services = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
             Serviços
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="badge badge-slate mx-auto mb-8 w-fit">
+            <span>Especialistas em aquecimento elétrico industrial</span>
+          </div>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Oferecemos soluções completas em aquecimento elétrico industrial, 
             desde o desenvolvimento até a manutenção de equipamentos especializados.
           </p>
@@ -57,14 +45,14 @@ const Services = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {services.map((service, index) => (
             <div key={index} className="group">
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-orange-200">
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 hover:border-accent-200">
                 <div className="overflow-hidden">
-                  <ServiceSVG className="w-full h-48" />
+                  <img src={service.imageSrc} alt={`Imagem ilustrativa: ${service.title}`} className="w-full h-48 object-cover" loading="lazy" />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                      <service.icon className="w-6 h-6 text-orange-600" />
+                    <div className="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mr-4">
+                      <service.icon className="w-6 h-6 text-accent-600" aria-hidden="true" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900">{service.title}</h3>
                   </div>
@@ -76,15 +64,15 @@ const Services = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="bg-gray-50 rounded-3xl p-8 md:p-12 text-center">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-slate-50 rounded-3xl p-8 md:p-12 text-center border border-slate-200">
+          <h3 className="text-3xl font-bold text-slate-900 mb-4">
             As Melhores Soluções em Aquecimento Elétrico Industrial
           </h3>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
             Venda de equipamentos para a indústria, soluções sob medida e manutenção de 
             equipamentos elétricos industriais com excelência e qualidade.
           </p>
-          <a href="#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+          <a href="#contact" className="btn-primary text-lg">
             Solicitar Orçamento
           </a>
         </div>

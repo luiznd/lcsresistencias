@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion'
 import { CheckCircle, Target, Eye, Heart, Factory } from 'lucide-react'
 import ImageSlices from './ImageSlices'
+import { LINKS } from '../config/contact'
 
 const About: React.FC = () => {
   const achievements = [
-    'Mais de 25 anos de experiência em resistências elétricas',
+    'Mais de 20 anos de experiência em resistências elétricas',
     'Equipe técnica especializada em aquecimento industrial',
     'Certificações ISO 9001 e normas técnicas brasileiras',
     'Atendimento personalizado para cada aplicação',
@@ -16,22 +17,22 @@ const About: React.FC = () => {
     {
       icon: Target,
       title: 'Missão',
-      description: 'Desenvolver e fabricar resistências elétricas industriais de alta qualidade, oferecendo soluções eficientes em aquecimento para diversos segmentos industriais.'
+      description: 'Oferecer peças e serviços com alto padrão de qualidade e um excelente custo benefício, com soluções que contemplem o perfil e necessidade de cada cliente.'
     },
     {
       icon: Eye,
       title: 'Visão',
-      description: 'Ser líder nacional na fabricação de resistências elétricas industriais, reconhecida pela qualidade, inovação e excelência no atendimento.'
+      description: 'Ser referência nacional no segmento de aquecimento elétrico industrial.'
     },
     {
       icon: Heart,
       title: 'Valores',
-      description: 'Qualidade superior, inovação tecnológica, sustentabilidade, ética profissional e compromisso com a satisfação dos clientes.'
+      description: 'Honestidade, profissionalismo, respeito, inovação, qualidade, superação, diálogo e parceria.'
     }
   ]
 
   return (
-    <section id="about" className="section-padding bg-gray-50">
+    <section id="about" className="section-padding bg-slate-50">
       <div className="container-custom">
         <motion.div 
           className="grid lg:grid-cols-2 gap-16 items-center"
@@ -42,22 +43,24 @@ const About: React.FC = () => {
         >
           {/* Content */}
           <div>
-            <div className="inline-flex items-center bg-primary-50 border border-primary-200 rounded-full px-4 py-2 mb-6">
-              <Factory className="h-4 w-4 text-primary-600 mr-2" />
-              <span className="text-sm font-medium text-primary-600">Sobre a LCS Resistências</span>
+            <div className="badge badge-accent mb-6">
+              <Factory className="h-4 w-4 mr-2" aria-hidden="true" />
+              <span>Sobre a LCS Resistências</span>
             </div>
             
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Especialistas em
-              <span className="text-primary-600 block">Resistências Elétricas Industriais</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+              Sobre a LCS Resistências
             </h2>
+            <div className="badge badge-slate mb-6">
+              <span>20 Anos de Excelência em Atendimento e Serviços</span>
+            </div>
             
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
               A LCS Resistências é uma empresa especializada no desenvolvimento, fabricação e manutenção 
-              de resistências elétricas industriais, com mais de 25 anos de experiência no mercado nacional.
+              de resistências elétricas industriais, com mais de 20 anos de experiência no mercado nacional.
             </p>
             
-            <p className="text-gray-600 mb-8 leading-relaxed">
+            <p className="text-slate-600 mb-8 leading-relaxed">
               Nossa equipe de engenheiros e técnicos especializados desenvolve soluções customizadas 
               em aquecimento elétrico para diversos segmentos industriais, garantindo máxima eficiência 
               energética, segurança operacional e durabilidade dos equipamentos.
@@ -67,8 +70,8 @@ const About: React.FC = () => {
             <div className="space-y-3">
               {achievements.map((achievement, index) => (
                 <div key={index} className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-primary-600 mr-3 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">{achievement}</span>
+                  <CheckCircle className="h-5 w-5 text-accent-600 mr-3 mt-0.5 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-slate-700">{achievement}</span>
                 </div>
               ))}
             </div>
@@ -85,7 +88,7 @@ const About: React.FC = () => {
             {/* Image Slices Display */}
             <div className="mb-8">
               <ImageSlices
-                imageSrc="/images/industrial-heating.jpg"
+                imageSrc="/images/resistencia.jfif"
                 sliceCount={3}
                 layout="vertical"
                 className="rounded-2xl overflow-hidden shadow-xl"
@@ -94,13 +97,13 @@ const About: React.FC = () => {
             
             {/* Stats Cards */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary-50 rounded-xl p-6 text-center border border-primary-100">
-                <div className="text-2xl font-bold text-primary-600 mb-1">500+</div>
-                <div className="text-sm text-primary-700">Projetos Concluídos</div>
+              <div className="bg-slate-50 rounded-xl p-6 text-center border border-slate-200">
+                <div className="text-2xl font-bold text-slate-800 mb-1">500+</div>
+                <div className="text-sm text-slate-600">Projetos Concluídos</div>
               </div>
-              <div className="bg-gray-100 rounded-xl p-6 text-center border border-gray-200">
-                <div className="text-2xl font-bold text-gray-700 mb-1">98%</div>
-                <div className="text-sm text-gray-600">Taxa de Satisfação</div>
+              <div className="bg-slate-100 rounded-xl p-6 text-center border border-slate-200">
+                <div className="text-2xl font-bold text-slate-800 mb-1">98%</div>
+                <div className="text-sm text-slate-600">Taxa de Satisfação</div>
               </div>
             </div>
           </motion.div>
@@ -115,10 +118,10 @@ const About: React.FC = () => {
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
               Nossos Princípios
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-slate-600 max-w-2xl mx-auto">
               Os valores que nos guiam em cada projeto e relacionamento com nossos clientes.
             </p>
           </div>
@@ -129,7 +132,7 @@ const About: React.FC = () => {
               return (
                 <motion.div 
                   key={index} 
-                  className="text-center bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+                  className="text-center bg-white p-8 rounded-2xl shadow-lg border border-slate-100"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -137,13 +140,30 @@ const About: React.FC = () => {
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
                   <div className="bg-gradient-to-br from-primary-500 to-primary-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <IconComponent className="h-8 w-8 text-white" />
+                    <IconComponent className="h-8 w-8 text-white" aria-hidden="true" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{value.description}</p>
+                  <h4 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h4>
+                  <p className="text-slate-600 leading-relaxed">{value.description}</p>
                 </motion.div>
               )
             })}
+          </div>
+        </motion.div>
+
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">
+              Fale Conosco
+            </a>
+            <a href="#contact" className="btn-outline text-lg">
+              Solicitar Orçamento
+            </a>
           </div>
         </motion.div>
       </div>
