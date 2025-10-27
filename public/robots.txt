@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lcsresistencias.com.br/sitemap.xml
