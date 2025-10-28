@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import About from './components/About'
 import GoogleAnalytics from './components/GoogleAnalytics'
 import StructuredData from './components/StructuredData'
+import { Analytics } from '@vercel/analytics/react'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <ImageGallery />
       <Contact />
       <Footer />
+      <Analytics />
     </div>
   )
 }
