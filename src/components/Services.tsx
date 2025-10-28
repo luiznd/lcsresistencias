@@ -5,21 +5,21 @@ const Services = () => {
   const services = [
     {
       icon: WrenchScrewdriverIcon,
-      title: "Fabricação",
-      description: "Fabricação de resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho, resistências para estufa industrial, resistências para buffet, fritadeira e chapa elétrica para cozinha profissional.",
+      title: "Resistências e fornos",
+      description: "Resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho, resistências para estufa industrial, resistências para buffet, fritadeira e chapa elétrica para cozinha profissional.",
       features: ["Resistências tubulares", "Fornos industriais", "Elementos aquecedores"],
       imageSrc: "/images/Gemini_Generated_Image_cm067pcm067pcm06.png"
     },
     {
       icon: CogIcon,
       title: "Manutenção",
-      description: "Serviços especializados de manutenção preventiva e corretiva em resistências fita mica, resistências coleira, resistências flangeadas e equipamentos elétricos industriais.",
+      description: "Serviços especializados de manutenção preventiva e corretiva, resistências coleira, resistências flangeadas e equipamentos elétricos industriais.",
       imageSrc: "/images/Gemini_Generated_Image_pq632ppq632ppq63.png"
     },
     {
       icon: ClipboardDocumentCheckIcon,
       title: "Projetos",
-      description: "Desenvolvimento de projetos customizados para resistências serpentina, mantas térmicas, resistências baioneta e soluções de aquecimento elétrico industrial.",
+      description: "Desenvolvimento de projetos customizados para resistências e soluções de aquecimento elétrico industrial.",
       imageSrc: "/images/Gemini_Generated_Image_62z15662z15662z1.png"
     }
   ]
@@ -70,9 +70,7 @@ const Services = () => {
             As Melhores Soluções em Aquecimento Elétrico Industrial
           </h3>
             <p className="text-lg md:text-xl text-slate-600 mb-6 md:mb-8 max-w-3xl mx-auto">
-            Fabricação de resistências para autoclave, resistências planas industriais, resistências para ar condicionado, 
-            cafeteira elétrica, resistências para buffet, fritadeira e chapa elétrica para equipamentos gastronômicos, 
-            com soluções sob medida e manutenção de equipamentos elétricos industriais com excelência e qualidade.
+            Soluções sob medida e manutenção de equipamentos elétricos industriais com excelência e qualidade.
           </p>
           <a href="#contact" className="btn-primary text-lg">
             Solicitar Orçamento
