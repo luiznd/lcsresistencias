@@ -5,10 +5,12 @@ import ImageGallery from './components/ImageGallery'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import About from './components/About'
+import GoogleAnalytics from './components/GoogleAnalytics'
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <GoogleAnalytics />
       <Header />
       <Hero />
       <About />
