@@ -6,7 +6,7 @@ const Services = () => {
     {
       icon: WrenchScrewdriverIcon,
       title: "Resistências e fornos",
-      description: "Resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho, resistências para estufa, buffet, fritadeira e mais para cozinha profissional.",
+      description: "Resistências elétricas tubulares, resistências blindadas, resistências cartucho, resistências para estufa, buffet, fritadeira e mais para cozinha profissional.",
       features: ["Resistências tubulares", "Fornos industriais", "Elementos aquecedores"],
       imageSrc: "/images/Gemini_Generated_Image_cm067pcm067pcm06.png"
     },
