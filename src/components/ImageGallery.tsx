@@ -14,7 +14,27 @@ const ImageGallery = () => {
   const toTitle = (url: string) => {
     const name = url.split('/').pop() || ''
     const base = name.replace(/\.[^.]+$/, '')
-    return base.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
+    
+    // Mapeamento específico para melhor SEO com termos específicos
+    const altTextMap: { [key: string]: string } = {
+      'resistencia03_Generated_Image_aeygi3aeygi3aeyg': 'Resistência elétrica tubular blindada para aquecimento industrial',
+      'resistencia_Image_ivsr6mivsr6mivsr': 'Resistência de imersão para aquecimento de líquidos em tanques',
+      'res04_Image_dk24zzdk24zzdk24': 'Resistência cartucho tipo cartucho para aplicações industriais',
+      'res05_dk24zzdk24zzdk24': 'Resistência fita mica para aquecimento de equipamentos',
+      'conjunto01_Image_m5mq9om5mq9om5mq': 'Resistência coleira tipo coleira para injetora plástica',
+      'fio_Image_3z9jbd3z9jbd3z9j': 'Resistência de ar quente para dutos de ar forçado',
+      'prateleira_Image_qgnb5mqgnb5mqgnb': 'Resistência flangeada com flange para estufa industrial',
+      'cafeteirai_4fm79n4fm79n4fm7': 'Resistência para cafeteira elétrica e aquecimento de bebidas',
+      'Gemini_Generated_Image_id5efgid5efgid5e': 'Resistência serpentina elétrica tipo espiral para caldeira'
+    }
+    
+    // Verifica se existe um alt text específico
+    if (altTextMap[base]) {
+      return altTextMap[base]
+    }
+    
+    // Fallback para conversão automática
+    return base.replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()) + ' - Resistência Elétrica Industrial LCS'
   }
 
   return (

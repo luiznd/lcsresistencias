@@ -6,11 +6,13 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import About from './components/About'
 import GoogleAnalytics from './components/GoogleAnalytics'
+import StructuredData from './components/StructuredData'
 
 function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       <GoogleAnalytics />
+      <StructuredData />
       <Header />
       <Hero />
       <About />

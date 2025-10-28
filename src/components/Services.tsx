@@ -6,20 +6,20 @@ const Services = () => {
     {
       icon: WrenchScrewdriverIcon,
       title: "Resistências e Fornos",
-      description: "Resistências elétricas industriais de alta qualidade para fornos e equipamentos de aquecimento.",
+      description: "Resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho e resistências para estufa industrial de alta qualidade.",
       features: ["Resistências tubulares", "Fornos industriais", "Elementos aquecedores"],
       imageSrc: "/images/Gemini_Generated_Image_cm067pcm067pcm06.png"
     },
     {
       icon: CogIcon,
       title: "Manutenção",
-      description: "Serviços especializados de manutenção preventiva e corretiva em equipamentos elétricos industriais.",
+      description: "Serviços especializados de manutenção preventiva e corretiva em resistências fita mica, resistências coleira, resistências flangeadas e equipamentos elétricos industriais.",
       imageSrc: "/images/Gemini_Generated_Image_pq632ppq632ppq63.png"
     },
     {
       icon: ClipboardDocumentCheckIcon,
       title: "Projetos",
-      description: "Desenvolvimento de projetos customizados para soluções de aquecimento elétrico industrial.",
+      description: "Desenvolvimento de projetos customizados para resistências serpentina, mantas térmicas, resistências baioneta e soluções de aquecimento elétrico industrial.",
       imageSrc: "/images/Gemini_Generated_Image_62z15662z15662z1.png"
     }
   ]
@@ -36,7 +36,8 @@ const Services = () => {
             <span>Especialistas em aquecimento elétrico industrial</span>
           </div>
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
-            Oferecemos soluções completas em aquecimento elétrico industrial, 
+            Oferecemos soluções completas em resistências elétricas tubulares, resistências de ar quente, 
+            resistências para caldeira, resistências para tanque inox e aquecimento elétrico industrial, 
             desde o desenvolvimento até a manutenção de equipamentos especializados.
           </p>
         </div>
@@ -69,7 +70,8 @@ const Services = () => {
             As Melhores Soluções em Aquecimento Elétrico Industrial
           </h3>
             <p className="text-lg md:text-xl text-slate-600 mb-6 md:mb-8 max-w-3xl mx-auto">
-            Venda de equipamentos para a indústria, soluções sob medida e manutenção de 
+            Fabricação de resistências para autoclave, resistências planas industriais, resistências para ar condicionado, 
+            cafeteira elétrica e equipamentos para a indústria, com soluções sob medida e manutenção de 
             equipamentos elétricos industriais com excelência e qualidade.
           </p>
           <a href="#contact" className="btn-primary text-lg">
