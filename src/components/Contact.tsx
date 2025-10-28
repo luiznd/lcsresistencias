@@ -207,7 +207,7 @@ const Contact: React.FC = () => {
                   <h4 className="font-semibold text-gray-900 mb-1">Endereço</h4>
                   <a href={LINKS.mapsLink} target="_blank" rel="noopener noreferrer" className="text-gray-900 font-medium hover:text-orange-600">{CONTACT.addressLine1}</a>
                   <p className="text-gray-900 font-medium">{CONTACT.addressLine2}</p>
-                  <p className="text-gray-600 text-sm">Visite nossa fábrica</p>
+                  <p className="text-gray-600 text-sm">Visite nossa loja</p>
                 </div>
               </div>
 
