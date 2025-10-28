@@ -5,8 +5,8 @@ const Services = () => {
   const services = [
     {
       icon: WrenchScrewdriverIcon,
-      title: "Resistências e Fornos",
-      description: "Resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho e resistências para estufa industrial de alta qualidade.",
+      title: "Fabricação",
+      description: "Fabricação de resistências elétricas tubulares, resistências blindadas, resistências de imersão, resistências cartucho, resistências para estufa industrial, resistências para buffet, fritadeira e chapa elétrica para cozinha profissional.",
       features: ["Resistências tubulares", "Fornos industriais", "Elementos aquecedores"],
       imageSrc: "/images/Gemini_Generated_Image_cm067pcm067pcm06.png"
     },
@@ -37,7 +37,7 @@ const Services = () => {
           </div>
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">
             Oferecemos soluções completas em resistências elétricas tubulares, resistências de ar quente, 
-            resistências para caldeira, resistências para tanque inox e aquecimento elétrico industrial, 
+            resistências para caldeira, resistências para tanque inox, resistências para buffet, fritadeira e chapa elétrica, 
             desde o desenvolvimento até a manutenção de equipamentos especializados.
           </p>
         </div>
@@ -71,8 +71,8 @@ const Services = () => {
           </h3>
             <p className="text-lg md:text-xl text-slate-600 mb-6 md:mb-8 max-w-3xl mx-auto">
             Fabricação de resistências para autoclave, resistências planas industriais, resistências para ar condicionado, 
-            cafeteira elétrica e equipamentos para a indústria, com soluções sob medida e manutenção de 
-            equipamentos elétricos industriais com excelência e qualidade.
+            cafeteira elétrica, resistências para buffet, fritadeira e chapa elétrica para equipamentos gastronômicos, 
+            com soluções sob medida e manutenção de equipamentos elétricos industriais com excelência e qualidade.
           </p>
           <a href="#contact" className="btn-primary text-lg">
             Solicitar Orçamento

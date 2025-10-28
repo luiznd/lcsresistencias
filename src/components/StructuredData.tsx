@@ -216,6 +216,30 @@ const StructuredData = () => {
               "name": "Cafeteira Elétrica",
               "description": "Resistências para cafeteira elétrica e equipamentos de aquecimento de bebidas"
             }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Resistência para Buffet",
+              "description": "Resistência elétrica para buffet, aquecimento de buffet e equipamentos gastronômicos"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Resistência para Fritadeira",
+              "description": "Resistência para fritadeira, resistência elétrica para fritadeira e fritadeira elétrica industrial"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Resistência para Chapa",
+              "description": "Resistência para chapa, resistência elétrica para chapa e chapa elétrica industrial para cozinha profissional"
+            }
           }
         ]
       }
