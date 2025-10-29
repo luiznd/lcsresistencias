@@ -44,7 +44,6 @@ const initI18n = () => {
       // Garantir que a detecção de idioma seja consistente
       react: {
         useSuspense: false,
-        wait: true
       },
     });
 };
@@ -60,7 +59,7 @@ export const checkAndSetLanguage = async () => {
     i18n.changeLanguage('pt-BR');
     return;
   }
-  
+
   // Se o IP for do Brasil, força o idioma para pt-BR
   try {
     console.log('Verificando localização do IP...');
