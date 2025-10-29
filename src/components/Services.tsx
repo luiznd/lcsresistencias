@@ -13,7 +13,7 @@ const Services = () => {
     {
       icon: CogIcon,
       title: "Manutenção",
-      description: "Serviços especializados de manutenção preventiva e corretiva, resistências coleira, resistências flangeadas e equipamentos elétricos industriais.",
+      description: "Manutenção de fornos, cafeteiras, chapas, buffets, fritadeiras, estufas e equipamentos de aquecimento elétrico industrial em geral.",
       imageSrc: "/images/Gemini_Generated_Image_pq632ppq632ppq63.png"
     },
     {

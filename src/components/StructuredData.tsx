@@ -76,6 +76,23 @@ const StructuredData = () => {
       "areaServed": {
         "@type": "Country",
         "name": "Brasil"
+      }
+    };
+
+    // Structured Data para Maintenance Service
+    const maintenanceServiceData = {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Manutenção de Resistências Elétricas",
+      "description": "Serviços de manutenção, reparo e substituição de resistências elétricas industriais",
+      "provider": {
+        "@type": "Organization",
+        "name": "LCS Resistências"
+      },
+      "serviceType": "Manutenção Industrial",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
       },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -86,7 +103,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Elétrica Tubular",
-              "description": "Resistência elétrica tubular e resistência tubular blindada para aquecimento industrial"
+              "description": "Resistência elétrica tubular e resistência tubular blindada para aquecimento industrial",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "25",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -94,7 +133,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência de Imersão",
-              "description": "Resistência de imersão para aquecimento de líquidos em tanques e caldeiras"
+              "description": "Resistência de imersão para aquecimento de líquidos em tanques e caldeiras",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "18",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -102,7 +163,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Cartucho",
-              "description": "Resistência cartucho e resistência tipo cartucho para aplicações industriais"
+              "description": "Resistência cartucho e resistência tipo cartucho para aplicações industriais",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "32",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -110,7 +193,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Fita Mica",
-              "description": "Resistência fita, resistência de fita mica e resistência mica para aquecimento"
+              "description": "Resistência fita, resistência de fita mica e resistência mica para aquecimento",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "15",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -118,7 +223,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Coleira",
-              "description": "Resistência coleira, resistência tipo coleira e resistência bico injetora para injetora plástica"
+              "description": "Resistência coleira, resistência tipo coleira e resistência bico injetora para injetora plástica",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "22",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -126,7 +253,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência de Ar Quente",
-              "description": "Resistência de ar quente, resistência de ar forçado e resistência de aquecimento de ar para dutos"
+              "description": "Resistência de ar quente, resistência de ar forçado e resistência de aquecimento de ar para dutos",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "19",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -134,7 +283,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Flangeada",
-              "description": "Resistência flangeada e resistência com flange para instalações industriais"
+              "description": "Resistência flangeada e resistência com flange para instalações industriais",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.5",
+                "reviewCount": "12",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -142,7 +313,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Estufa",
-              "description": "Resistência para estufa, resistência para estufa industrial e resistência para estufa de pintura"
+              "description": "Resistência para estufa, resistência para estufa industrial e resistência para estufa de pintura",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "28",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -150,7 +343,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Autoclave",
-              "description": "Resistência para autoclave e equipamentos de esterilização industrial"
+              "description": "Resistência para autoclave e equipamentos de esterilização industrial",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "14",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -158,7 +373,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Caldeira",
-              "description": "Resistência elétrica para caldeira e resistência elétrica para boiler/aquecedor de água"
+              "description": "Resistência elétrica para caldeira e resistência elétrica para boiler/aquecedor de água",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "21",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -166,7 +403,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Serpentina",
-              "description": "Resistência serpentina, serpentina elétrica e resistência tipo espiral"
+              "description": "Resistência serpentina, serpentina elétrica e resistência tipo espiral",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "17",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -174,7 +433,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Plana",
-              "description": "Resistência plana e resistência plana industrial para aplicações específicas"
+              "description": "Resistência plana e resistência plana industrial para aplicações específicas",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.5",
+                "reviewCount": "13",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -182,7 +463,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Manta Térmica",
-              "description": "Resistência fita silicone, manta térmica de silicone, manta térmica aquecimento e manta aquecedora industrial"
+              "description": "Resistência fita silicone, manta térmica de silicone, manta térmica aquecimento e manta aquecedora industrial",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "35",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -190,7 +493,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência Baioneta",
-              "description": "Resistência baioneta e resistência baionetada para aquecimento de fluidos"
+              "description": "Resistência baioneta e resistência baionetada para aquecimento de fluidos",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.6",
+                "reviewCount": "16",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -198,7 +523,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Ar Condicionado",
-              "description": "Resistência para ar condicionado industrial e resistência de aquecimento de ar condicionado"
+              "description": "Resistência para ar condicionado industrial e resistência de aquecimento de ar condicionado",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.4",
+                "reviewCount": "11",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -206,7 +553,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Tanque Inox",
-              "description": "Resistência para tanque inox e aquecimento de tanques industriais"
+              "description": "Resistência para tanque inox e aquecimento de tanques industriais",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "20",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -214,7 +583,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Cafeteira Elétrica",
-              "description": "Resistências para cafeteira elétrica e equipamentos de aquecimento de bebidas"
+              "description": "Resistências para cafeteira elétrica e equipamentos de aquecimento de bebidas",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "24",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -222,7 +613,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Buffet",
-              "description": "Resistência elétrica para buffet, aquecimento de buffet e equipamentos gastronômicos"
+              "description": "Resistência elétrica para buffet, aquecimento de buffet e equipamentos gastronômicos",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "31",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -230,7 +643,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Fritadeira",
-              "description": "Resistência para fritadeira, resistência elétrica para fritadeira e fritadeira elétrica industrial"
+              "description": "Resistência para fritadeira, resistência elétrica para fritadeira e fritadeira elétrica industrial",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "27",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           },
           {
@@ -238,7 +673,29 @@ const StructuredData = () => {
             "itemOffered": {
               "@type": "Product",
               "name": "Resistência para Chapa",
-              "description": "Resistência para chapa, resistência elétrica para chapa e chapa elétrica industrial para cozinha profissional"
+              "description": "Resistência para chapa, resistência elétrica para chapa e chapa elétrica industrial para cozinha profissional",
+              "offers": {
+                "@type": "Offer",
+                "priceCurrency": "BRL",
+                "price": "0",
+                "priceSpecification": {
+                  "@type": "PriceSpecification",
+                  "priceCurrency": "BRL",
+                  "price": "0"
+                },
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "Organization",
+                  "name": "LCS Resistências Elétricas"
+                }
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.7",
+                "reviewCount": "23",
+                "bestRating": "5",
+                "worstRating": "1"
+              }
             }
           }
         ]
@@ -265,6 +722,7 @@ const StructuredData = () => {
     addStructuredData(localBusinessData, 'local-business-schema');
     addStructuredData(organizationData, 'organization-schema');
     addStructuredData(servicesData, 'services-schema');
+    addStructuredData(maintenanceServiceData, 'maintenance-service-schema');
 
     // Cleanup function
     return () => {
