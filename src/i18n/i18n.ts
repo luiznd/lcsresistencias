@@ -27,7 +27,7 @@ i18n
   .use(initReactI18next)
   .init({
     fallbackLng: 'pt-BR',
-    debug: process.env.NODE_ENV === 'development',
+    debug: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : false,
     
     // Configuração para carregar os arquivos de tradução
     backend: {
