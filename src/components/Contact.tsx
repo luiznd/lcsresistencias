@@ -218,7 +218,6 @@ const Contact: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Horário</h4>
                   <p className="text-gray-900 font-medium">Segunda à Sexta: 8h às 18h</p>
-                  <p className="text-gray-900 font-medium">Sábado: 8h às 12h</p>
                 </div>
               </div>
             </div>

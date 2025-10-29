@@ -55,7 +55,6 @@ const Footer = () => {
                 <ClockIcon className="w-5 h-5 text-accent-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-slate-300">Segunda à Sexta: 8h às 18h</p>
-                  <p className="text-slate-300">Sábado: 8h às 12h</p>
                 </div>
               </div>
             </div>
