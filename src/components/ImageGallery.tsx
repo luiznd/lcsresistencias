@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-// @ts-ignore - módulo virtual fornecido pelo plugin no vite.config.ts
+// @ts-expect-error - módulo virtual fornecido pelo plugin no vite.config.ts
 import gallery from 'virtual:gallery'
 
 

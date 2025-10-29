@@ -81,11 +81,11 @@ const Contact: React.FC = () => {
         type: 'success'
       })
       setFormData({ name: '', email: '', phone: '', description: '' })
-    } catch (err: any) {
+    } catch (err: unknown) {
       setModal({
         open: true,
         title: 'Erro no envio',
-        message: err.message || 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.',
+        message: err instanceof Error ? err.message : 'Ocorreu um erro ao enviar a mensagem. Tente novamente mais tarde.',
         type: 'error'
       })
     }

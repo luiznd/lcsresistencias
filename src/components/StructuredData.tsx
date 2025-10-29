@@ -703,7 +703,7 @@ const StructuredData = () => {
     };
 
     // Função para adicionar structured data
-    const addStructuredData = (data: any, id: string) => {
+    const addStructuredData = (data: unknown, id: string) => {
       // Remove script existente se houver
       const existingScript = document.getElementById(id);
       if (existingScript) {

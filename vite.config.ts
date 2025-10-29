@@ -27,7 +27,7 @@ function galleryPlugin() {
         return `export default ${JSON.stringify(urls)};`
       }
     },
-    handleHotUpdate(ctx: any) {
+    handleHotUpdate(ctx: {file: string; server: {moduleGraph: {getModuleById: (id: string) => unknown; invalidateModule: (mod: unknown) => void}}}) {
       const galleryPath = path.join('public', 'images', 'galeria')
       if (ctx.file.includes(galleryPath)) {
         const mod = ctx.server.moduleGraph.getModuleById('virtual:gallery')

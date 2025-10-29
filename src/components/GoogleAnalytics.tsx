@@ -26,20 +26,20 @@ const GoogleAnalytics = () => {
 
     // Configurar o gtag
     script.onload = () => {
-      // @ts-ignore
-      window.dataLayer = window.dataLayer || []
-      // @ts-ignore
-      function gtag(...args: any[]) {
-        // @ts-ignore
-        window.dataLayer.push(args)
-      }
-      // @ts-ignore
-      window.gtag = gtag
+      // @ts-expect-error - Window interface extension
+    window.dataLayer = window.dataLayer || []
+    // @ts-expect-error - Window interface extension
+    function gtag(...args: unknown[]) {
+      // @ts-expect-error - Window interface extension
+      window.dataLayer.push(args)
+    }
+    // @ts-expect-error - Window interface extension
+    window.gtag = gtag
 
-      // @ts-ignore
-      gtag('js', new Date())
-      // @ts-ignore
-      gtag('config', trackingId, {
+    // @ts-expect-error - Window interface extension
+    gtag('js', new Date())
+    // @ts-expect-error - Window interface extension
+    gtag('config', trackingId, {
         page_title: document.title,
         page_location: window.location.href,
       })
