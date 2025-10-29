@@ -40,6 +40,12 @@ const initI18n = () => {
       interpolation: {
         escapeValue: false, // React já escapa os valores
       },
+      
+      // Garantir que a detecção de idioma seja consistente
+      react: {
+        useSuspense: false,
+        wait: true
+      },
     });
 };
 
