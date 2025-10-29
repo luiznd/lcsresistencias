@@ -38,6 +38,11 @@ const ImageGallery = () => {
       category: 'Resistências Flexíveis',
       description: 'Resistência tipo fita com isolamento em mica para aplicações que exigem flexibilidade. Perfeita para equipamentos com superfícies irregulares ou cilíndricas.'
     },
+    'res09_6ttksd6ttksd6ttk': {
+      title: 'Resistência para fritadeira',
+      category: 'Resistências Flexíveis',
+      description: 'Resistência para aplicações que exigem flexibilidade. Perfeita para fritadeiras.'
+    },    
     'conjunto01_Image_m5mq9om5mq9om5mq': {
       title: 'Resistência tipo coleira',
       category: 'Resistências Coleira',
@@ -91,7 +96,7 @@ const ImageGallery = () => {
     
     // Fallback para produtos sem detalhes específicos
     return {
-      title: toTitle(url),
+      title: 'Resistência elétrica',
       category: 'Resistências Industriais',
       description: 'Resistência elétrica industrial personalizada para aplicações específicas. Entre em contato para mais informações sobre este produto.'
     }
