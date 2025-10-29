@@ -29,7 +29,7 @@ const initI18n = () => {
     .use(Backend)
     .use(initReactI18next)
     .init({
-      fallbackLng: 'en', // Padrão é inglês
+      fallbackLng: 'pt-BR', // Padrão é português do Brasil
       debug: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : false,
       
       // Configuração para carregar os arquivos de tradução
