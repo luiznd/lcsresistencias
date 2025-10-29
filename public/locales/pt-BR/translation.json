@@ -1,0 +1,66 @@
+{
+  "header": {
+    "home": "Início",
+    "about": "Sobre",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "LCS Resistências Elétricas",
+    "subtitle": "Especialistas em aquecimento elétrico industrial",
+    "cta": "Solicitar Orçamento"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "subtitle": "Especialistas em aquecimento elétrico industrial",
+    "description": "A LCS Resistências é especializada na fabricação de resistências elétricas industriais e soluções de aquecimento para diversos segmentos. Com anos de experiência no mercado, oferecemos produtos de alta qualidade e durabilidade para atender às necessidades específicas de cada cliente."
+  },
+  "services": {
+    "title": "Serviços",
+    "subtitle": "Especialistas em aquecimento elétrico industrial",
+    "description": "Oferecemos soluções completas em resistências elétricas tubulares, resistências de ar quente, resistências para caldeira, resistências para tanque inox, resistências para buffet, fritadeira e chapa elétrica, desde o desenvolvimento até a manutenção de equipamentos especializados.",
+    "maintenance": {
+      "title": "Manutenção",
+      "description": "Manutenção de fornos, cafeteiras, chapas, buffets, fritadeiras, estufas e equipamentos de aquecimento elétrico industrial em geral. Serviços especializados de manutenção preventiva e corretiva, resistências coleira, resistências flangeadas e equipamentos elétricos industriais."
+    },
+    "projects": {
+      "title": "Projetos",
+      "description": "Desenvolvimento de projetos customizados para resistências e soluções de aquecimento elétrico industrial."
+    },
+    "resistances": {
+      "title": "Resistências e fornos",
+      "description": "Resistências elétricas tubulares, resistências blindadas, resistências cartucho, resistências para estufa, buffet, fritadeira e mais para cozinha profissional."
+    },
+    "bottom": {
+      "title": "As Melhores Soluções em Aquecimento Elétrico Industrial",
+      "description": "Soluções sob medida e manutenção de equipamentos elétricos industriais com excelência e qualidade.",
+      "cta": "Solicitar Orçamento"
+    }
+  },
+  "portfolio": {
+    "title": "Portfólio",
+    "subtitle": "Conheça nossos produtos e projetos"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Entre em contato conosco",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "message": "Mensagem",
+      "submit": "Enviar Mensagem"
+    }
+  },
+  "footer": {
+    "address": "Endereço",
+    "contact": "Contato",
+    "copyright": "© 2023 LCS Resistências. Todos os direitos reservados."
+  },
+  "language": {
+    "select": "Selecionar idioma",
+    "pt-BR": "Português",
+    "en": "Inglês"
+  }
+}

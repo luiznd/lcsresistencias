@@ -1,16 +1,18 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { LINKS } from '../config/contact'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useTranslation()
 
   const navigation = [
-    { name: 'Início', href: '#home' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Serviços', href: '#services' },
-    { name: 'Produtos', href: '#gallery' },
-    { name: 'Contato', href: '#contact' },
+    { name: t('header.home'), href: '#home' },
+    { name: t('header.about'), href: '#about' },
+    { name: t('header.services'), href: '#services' },
+    { name: t('portfolio.title'), href: '#gallery' },
+    { name: t('header.contact'), href: '#contact' },
     { name: 'WhatsApp', href: LINKS.whatsapp },
   ]
 

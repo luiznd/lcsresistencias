@@ -1,0 +1,66 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "LCS Electric Heating",
+    "subtitle": "Specialists in industrial electric heating",
+    "cta": "Request Quote"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Specialists in industrial electric heating",
+    "description": "LCS Resistências specializes in manufacturing industrial electric heating elements and heating solutions for various segments. With years of experience in the market, we offer high-quality and durable products to meet the specific needs of each client."
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Specialists in industrial electric heating",
+    "description": "We offer complete solutions in tubular electric heating elements, hot air heaters, boiler heaters, stainless steel tank heaters, buffet heaters, fryer and electric griddle heaters, from development to maintenance of specialized equipment.",
+    "maintenance": {
+      "title": "Maintenance",
+      "description": "Maintenance of ovens, coffee makers, griddles, buffets, fryers, stoves and industrial electric heating equipment in general. Specialized preventive and corrective maintenance services, collar heaters, flanged heaters and industrial electrical equipment."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Development of customized projects for heating elements and industrial electric heating solutions."
+    },
+    "resistances": {
+      "title": "Heating elements and ovens",
+      "description": "Tubular electric heating elements, sheathed heating elements, cartridge heaters, heaters for ovens, buffets, fryers and more for professional kitchens."
+    },
+    "bottom": {
+      "title": "The Best Solutions in Industrial Electric Heating",
+      "description": "Custom solutions and maintenance of industrial electrical equipment with excellence and quality.",
+      "cta": "Request Quote"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Discover our products and projects"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "address": "Address",
+    "contact": "Contact",
+    "copyright": "© 2023 LCS Resistências. All rights reserved."
+  },
+  "language": {
+    "select": "Select language",
+    "pt-BR": "Portuguese",
+    "en": "English"
+  }
+}

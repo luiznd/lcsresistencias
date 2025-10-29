@@ -8,21 +8,27 @@ import About from './components/About'
 import GoogleAnalytics from './components/GoogleAnalytics'
 import StructuredData from './components/StructuredData'
 import { Analytics } from '@vercel/analytics/react'
+import { I18nextProvider } from 'react-i18next'
+import i18n from './i18n/i18n'
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <GoogleAnalytics />
-      <StructuredData />
-      <Header />
-      <Hero />
-      <About />
-      <Services />
-      <ImageGallery />
-      <Contact />
-      <Footer />
-      <Analytics />
-    </div>
+    <I18nextProvider i18n={i18n}>
+      <div className="min-h-screen bg-gray-50">
+        <GoogleAnalytics />
+        <StructuredData />
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Services />
+          <ImageGallery />
+          <Contact />
+        </main>
+        <Footer />
+        <Analytics />
+      </div>
+    </I18nextProvider>
   )
 }
 
