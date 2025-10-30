@@ -2,6 +2,50 @@ import { useEffect } from 'react';
 
 const StructuredData = () => {
   useEffect(() => {
+    // Data de validade para preços (1 ano a partir de hoje)
+    const priceValidUntil = new Date();
+    priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1);
+    const priceValidUntilISO = priceValidUntil.toISOString().split('T')[0];
+
+    // Política de devolução padrão
+    const defaultReturnPolicy = {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "BR",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 30,
+      "returnMethod": "https://schema.org/ReturnByMail",
+      "returnFees": "https://schema.org/FreeReturn"
+    };
+
+    // Detalhes de envio padrão
+    const defaultShippingDetails = {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "BRL"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "BR"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 5,
+          "maxValue": 15,
+          "unitCode": "DAY"
+        }
+      }
+    };
+
     // Structured Data para LocalBusiness
     const localBusinessData = {
       "@context": "https://schema.org",
@@ -32,9 +76,9 @@ const StructuredData = () => {
       "image": "https://lcsresistencias.com.br/images/logo-lcs.svg",
       "logo": "https://lcsresistencias.com.br/images/logo-lcs.svg",
       "sameAs": [
-        "https://www.facebook.com/lcsresistencias", // Adicione se existir
-        "https://www.instagram.com/lcsresistencias", // Adicione se existir
-        "https://www.linkedin.com/company/lcsresistencias" // Adicione se existir
+        "https://www.facebook.com/lcsresistencias",
+        "https://www.instagram.com/lcsresistencias",
+        "https://www.linkedin.com/company/lcsresistencias"
       ]
     };
 
@@ -79,7 +123,7 @@ const StructuredData = () => {
       }
     };
 
-    // Structured Data para Maintenance Service
+    // Structured Data para Maintenance Service com produtos corrigidos
     const maintenanceServiceData = {
       "@context": "https://schema.org",
       "@type": "Service",
@@ -104,16 +148,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Elétrica Tubular",
               "description": "Resistência elétrica tubular e resistência tubular blindada para aquecimento industrial",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -134,16 +182,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência de Imersão",
               "description": "Resistência de imersão para aquecimento de líquidos em tanques e caldeiras",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -164,16 +216,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Cartucho",
               "description": "Resistência cartucho e resistência tipo cartucho para aplicações industriais",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -194,16 +250,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Fita Mica",
               "description": "Resistência fita, resistência de fita mica e resistência mica para aquecimento",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -224,16 +284,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Coleira",
               "description": "Resistência coleira, resistência tipo coleira e resistência bico injetora para injetora plástica",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -254,16 +318,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência de Ar Quente",
               "description": "Resistência de ar quente, resistência de ar forçado e resistência de aquecimento de ar para dutos",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -284,16 +352,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Flangeada",
               "description": "Resistência flangeada e resistência com flange para instalações industriais",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -314,16 +386,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Estufa",
               "description": "Resistência para estufa, resistência para estufa industrial e resistência para estufa de pintura",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -344,16 +420,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Autoclave",
               "description": "Resistência para autoclave e equipamentos de esterilização industrial",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -374,16 +454,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Caldeira",
               "description": "Resistência elétrica para caldeira e resistência elétrica para boiler/aquecedor de água",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -404,16 +488,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Serpentina",
               "description": "Resistência serpentina, serpentina elétrica e resistência tipo espiral",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -434,16 +522,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Plana",
               "description": "Resistência plana e resistência plana industrial para aplicações específicas",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -464,16 +556,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Manta Térmica",
               "description": "Resistência fita silicone, manta térmica de silicone, manta térmica aquecimento e manta aquecedora industrial",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -494,16 +590,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência Baioneta",
               "description": "Resistência baioneta e resistência baionetada para aquecimento de fluidos",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -524,16 +624,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Ar Condicionado",
               "description": "Resistência para ar condicionado industrial e resistência de aquecimento de ar condicionado",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -554,16 +658,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Tanque Inox",
               "description": "Resistência para tanque inox e aquecimento de tanques industriais",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -584,16 +692,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Cafeteira Elétrica",
               "description": "Resistências para cafeteira elétrica e equipamentos de aquecimento de bebidas",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -614,16 +726,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Buffet",
               "description": "Resistência elétrica para buffet, aquecimento de buffet e equipamentos gastronômicos",
+              "image": "https://lcsresistencias.com.br/images/buffet_d200.jpg",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -644,16 +760,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Fritadeira",
               "description": "Resistência para fritadeira, resistência elétrica para fritadeira e fritadeira elétrica industrial",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -674,16 +794,20 @@ const StructuredData = () => {
               "@type": "Product",
               "name": "Resistência para Chapa",
               "description": "Resistência para chapa, resistência elétrica para chapa e chapa elétrica industrial para cozinha profissional",
+              "image": "https://lcsresistencias.com.br/images/resistencia.jfif",
               "offers": {
                 "@type": "Offer",
                 "priceCurrency": "BRL",
                 "price": "0",
+                "priceValidUntil": priceValidUntilISO,
                 "priceSpecification": {
                   "@type": "PriceSpecification",
                   "priceCurrency": "BRL",
                   "price": "0"
                 },
                 "availability": "https://schema.org/InStock",
+                "hasMerchantReturnPolicy": defaultReturnPolicy,
+                "shippingDetails": defaultShippingDetails,
                 "seller": {
                   "@type": "Organization",
                   "name": "LCS Resistências Elétricas"
@@ -726,7 +850,7 @@ const StructuredData = () => {
 
     // Cleanup function
     return () => {
-      const schemas = ['local-business-schema', 'organization-schema', 'services-schema'];
+      const schemas = ['local-business-schema', 'organization-schema', 'services-schema', 'maintenance-service-schema'];
       schemas.forEach(id => {
         const script = document.getElementById(id);
         if (script) {
