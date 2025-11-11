@@ -1,3 +1,4 @@
+"use client"
 import { useEffect } from 'react'
 
 const GoogleAnalytics = () => {
@@ -7,9 +8,9 @@ const GoogleAnalytics = () => {
 
     // Permitir configuração via variáveis de ambiente
     // Preferencialmente use VITE_GA_MEASUREMENT_IDS com IDs separados por vírgula
-    const envMeasurementIdsRaw = import.meta.env?.VITE_GA_MEASUREMENT_IDS as string | undefined
-    const envMeasurementId = import.meta.env?.VITE_GA_MEASUREMENT_ID as string | undefined
-    const enableOnLocal = (import.meta.env?.VITE_ENABLE_GA_ON_LOCAL as string | undefined) === 'true'
+    const envMeasurementIdsRaw = process.env.NEXT_PUBLIC_GA_MEASUREMENT_IDS as string | undefined
+    const envMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string | undefined
+    const enableOnLocal = (process.env.NEXT_PUBLIC_ENABLE_GA_ON_LOCAL as string | undefined) === 'true'
 
     // Definir os measurement IDs
     let measurementIds: string[] = []
