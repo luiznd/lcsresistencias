@@ -28,6 +28,48 @@ Projeto do site institucional da LCS Resistências, migrado para Next.js (App Ro
 - `public/images/` — imagens públicas do site
 - `src/app/api/send-email/route.ts` — API de envio de e-mails via SMTP (Nodemailer)
 
+## 🔀 Proxy de redirecionamento (rotas legadas → âncoras)
+Para evitar 404 em links antigos e levar o usuário diretamente às seções da home, usamos o recurso de **Proxy** do Next.js 16 (novo nome do antigo Middleware).
+
+- Arquivo: `src/proxy.ts`
+- Status: redireciona com **308 Permanent Redirect** e inclui o fragmento (âncora) na URL.
+- Normaliza barra final (ex.: `/galeria/` → `/galeria`).
+- Ignora assets/API/rotas internas: `api`, `_next/static`, `_next/image`, `favicon.ico`, `robots.txt`, `sitemap.xml`, `images`, `public`.
+
+Mapeamentos:
+- Domínio `.com.br`
+  - `/galeria` → `/#gallery`
+  - `/home` → `/#home`
+  - `/servicos` → `/#services`
+  - `/contato` → `/#contact`
+- Domínio `.com`
+  - `/galeria` → `/#gallery`
+  - `/home` → `/#home`
+  - `/servicos` → `/#services`
+  - `/contato` → `/#contact`
+  - `/sobre` → `/#about`
+
+Observações importantes:
+- O `next.config.ts` foi mantido sem redirects para esses slugs, pois **Next.js redirects não suportam fragmentos `#`** no destino. O Proxy resolve isso corretamente.
+- Certifique-se de que as seções da home possuam os ids correspondentes: `home`, `gallery`, `services`, `contact`, `about`.
+- Referência: renomeação “middleware → proxy” no Next.js 16 (documentação oficial).
+
+Como testar localmente (PowerShell):
+
+```
+try {
+  $resp = Invoke-WebRequest -Uri 'http://localhost:3000/galeria' -MaximumRedirection 0 -ErrorAction Stop
+  $resp
+} catch {
+  $res = $_.Exception.Response
+  $res.Headers  # deve conter Location: /#gallery
+}
+```
+
+Resultado esperado:
+- Status: `PermanentRedirect`
+- Headers: `Location: /#gallery`, `Refresh: 0;url=/#gallery`
+
 ## ✉️ Envio de e-mail (SMTP)
 A rota `src/app/api/send-email/route.ts` utiliza variáveis de ambiente:
 - `SMTP_HOST` (default: `smtp.gmail.com`)
@@ -37,7 +79,7 @@ A rota `src/app/api/send-email/route.ts` utiliza variáveis de ambiente:
 - `SMTP_PASS` — senha ou app password (obrigatório)
 - `MAIL_FROM` — remetente (ex.: `"LCS Resistências <no-reply@lcsresistencias.com.br>"`)
 - `MAIL_TO` — e-mail destino (default: `lcs.contato@gmail.com`)
-- `ALLOW_ORIGINS` — origens permitidas para CORS (ex.: `http://localhost:3000,https://www.lcsresistencias.com.br,https://www.lcsresistencias.com`)
+- `ALLOW_ORIGINS` — origens permitidas para CORS (ex.: `http://localhost:3000,https://lcsresistencias.com.br,https://www.lcsresistencias.com.br,https://lcsresistencias.com,https://www.lcsresistencias.com`)
 
 Validação de entrada: nome, e-mail e descrição são obrigatórios. Responde com `200` em sucesso ou `400/500` em erros.
 
@@ -85,6 +127,8 @@ SMTP_PASS=
 MAIL_FROM="LCS Resistências <no-reply@lcsresistencias.com.br>"
 MAIL_TO=lcs.contato@gmail.com
 ALLOW_ORIGINS=http://localhost:3000
+# Recomenda-se incluir as origens de produção (apex e www):
+# ALLOW_ORIGINS=http://localhost:3000,https://lcsresistencias.com.br,https://www.lcsresistencias.com.br,https://lcsresistencias.com,https://www.lcsresistencias.com
 ```
 
 ## 📄 Licença
