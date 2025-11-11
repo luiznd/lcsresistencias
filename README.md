@@ -37,7 +37,7 @@ A rota `src/app/api/send-email/route.ts` utiliza variáveis de ambiente:
 - `SMTP_PASS` — senha ou app password (obrigatório)
 - `MAIL_FROM` — remetente (ex.: `"LCS Resistências <no-reply@lcsresistencias.com.br>"`)
 - `MAIL_TO` — e-mail destino (default: `lcs.contato@gmail.com`)
-- `ALLOW_ORIGINS` — origens permitidas para CORS (ex.: `http://localhost:3000,https://www.lcsresistencias.com.br`)
+- `ALLOW_ORIGINS` — origens permitidas para CORS (ex.: `http://localhost:3000,https://www.lcsresistencias.com.br,https://www.lcsresistencias.com`)
 
 Validação de entrada: nome, e-mail e descrição são obrigatórios. Responde com `200` em sucesso ou `400/500` em erros.
 
