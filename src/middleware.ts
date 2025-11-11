@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { NextResponse } from 'next/server'
 
 // Mapeamentos de slugs legados para âncoras por domínio
 const anchorMapComBr: Record<string, string> = {
@@ -27,10 +27,6 @@ export function middleware(req: NextRequest) {
     : url.pathname
 
   const isComBr = /(^|\.)lcsresistencias\.com\.br$/i.test(host)
-  const isCom = /(^|\.)lcsresistencias\.com$/i.test(host)
-
-  // Em localhost, aplicamos o mapa .com para facilitar testes de todas as âncoras
-  const isLocalhost = /^localhost(?::\d+)?$/i.test(host)
   const mapping = isComBr ? anchorMapComBr : anchorMapCom
 
   const anchor = mapping[pathname]
@@ -50,4 +46,3 @@ export const config = {
     '/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|images|public).*)',
   ],
 }
-
