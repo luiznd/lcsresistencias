@@ -12,21 +12,32 @@ const GoogleAnalytics = () => {
     const envMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string | undefined
     const enableOnLocal = (process.env.NEXT_PUBLIC_ENABLE_GA_ON_LOCAL as string | undefined) === 'true'
 
-    // Definir os measurement IDs
-    let measurementIds: string[] = []
+    // Definir os measurement IDs (configurados) e fallback
+    let configuredIds: string[] = []
     if (envMeasurementIdsRaw) {
-      measurementIds = envMeasurementIdsRaw.split(',').map(id => id.trim()).filter(Boolean)
+      configuredIds = envMeasurementIdsRaw.split(',').map(id => id.trim()).filter(Boolean)
     } else if (envMeasurementId) {
-      measurementIds = [envMeasurementId]
-    } else {
-      // Fallback: como você usa .com.br e .com, vamos configurar ambos
-      measurementIds = ['G-2N2RTT79SJ', 'G-5HQKVHEFZB']
+      configuredIds = [envMeasurementId]
     }
+    const fallbackIds = ['G-2N2RTT79SJ', 'G-5HQKVHEFZB'] // [com.br, com]
 
     // Em localhost, só carrega se explicitamente habilitado
     const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1'
-    if (!measurementIds.length || (isLocalhost && !enableOnLocal)) {
-      console.log('Google Analytics não carregado (hostname:', hostname, 'measurementIds:', measurementIds, 'enableOnLocal:', enableOnLocal, ')')
+    let measurementIds: string[] = []
+    if (isLocalhost) {
+      measurementIds = enableOnLocal ? (configuredIds.length ? configuredIds : fallbackIds) : []
+    } else if (hostname.endsWith('lcsresistencias.com.br')) {
+      // Usar apenas o ID da propriedade .com.br
+      measurementIds = [configuredIds[0] || fallbackIds[0]]
+    } else if (hostname.endsWith('lcsresistencias.com')) {
+      // Usar apenas o ID da propriedade .com
+      measurementIds = [configuredIds[1] || fallbackIds[1]]
+    } else {
+      // Hostname desconhecido — carregar IDs configurados ou fallback (ambos)
+      measurementIds = configuredIds.length ? configuredIds : fallbackIds
+    }
+    if (!measurementIds.length) {
+      console.log('Google Analytics não carregado (hostname:', hostname, 'enableOnLocal:', enableOnLocal, ')')
       return
     }
 
@@ -54,7 +65,7 @@ const GoogleAnalytics = () => {
 
       // @ts-ignore
       gtag('js', new Date())
-      // Configurar cada Measurement ID
+      // Configurar cada Measurement ID selecionado
       measurementIds.forEach((id) => {
         // @ts-ignore
         gtag('config', id, {
