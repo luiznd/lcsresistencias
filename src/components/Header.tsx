@@ -1,3 +1,4 @@
+"use client"
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { LINKS } from '../config/contact'
 import { useState } from 'react'

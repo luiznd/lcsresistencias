@@ -1,3 +1,4 @@
+"use client"
 import { useState, type ChangeEvent, type FormEvent } from 'react'
 
 import { PhoneIcon, EnvelopeIcon, MapPinIcon, ClockIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'

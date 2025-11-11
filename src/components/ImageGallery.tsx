@@ -1,7 +1,8 @@
+"use client"
 import { useState } from 'react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
-// @ts-ignore - módulo virtual fornecido pelo plugin no vite.config.ts
-import gallery from 'virtual:gallery'
+// Recebe a lista de imagens via props (fornecida pelo server component em Next)
+type Props = { images: string[] }
 
 // Interface para os dados do produto
 interface ProductData {
@@ -10,11 +11,8 @@ interface ProductData {
   description: string;
 }
 
-const ImageGallery = () => {
+const ImageGallery = ({ images }: Props) => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
-
-  // Lista de URLs das imagens da pasta public/images/galeria
-  const images: string[] = gallery as string[]
 
   // Mapeamento de produtos com informações detalhadas
   const productDetails: Record<string, ProductData> = {
