@@ -37,6 +37,11 @@
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/App.vite.backup.tsx",
+    "src/main.vite.backup.tsx",
+    "src/vite-env.backup.d.ts",
+    "vite.config.backup.ts",
+    "tsconfig.node.backup.json"
   ]
 }
